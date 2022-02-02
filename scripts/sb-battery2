@@ -1,0 +1,49 @@
+#!/bin/sh
+
+bat_status="$(cat '/sys/class/power_supply/BAT0/status')"
+capacity="$(cat '/sys/class/power_supply/BAT0/capacity')"
+
+f_charging(){
+  if [ $capacity -ge 90 ]; then status=""
+  elif [ $capacity -ge 80 ]; then status=""
+  elif [ $capacity -ge 70 ]; then status=""
+  elif [ $capacity -ge 60 ]; then status=""
+  elif [ $capacity -ge 50 ]; then status=""
+  elif [ $capacity -ge 40 ]; then status=""
+  elif [ $capacity -ge 30 ]; then status=""
+  elif [ $capacity -ge 20 ]; then status=""
+  elif [ $capacity -ge 10 ]; then status=""
+  elif [ $capacity -ge 0 ]; then status=""
+  else status=""
+  fi
+}
+
+f_discharging(){
+  if [ $capacity -ge 90 ]; then status=""
+  elif [ $capacity -ge 80 ]; then status=""
+  elif [ $capacity -ge 70 ]; then status=""
+  elif [ $capacity -ge 60 ]; then status=""
+  elif [ $capacity -ge 50 ]; then status=""
+  elif [ $capacity -ge 40 ]; then status=""
+  elif [ $capacity -ge 30 ]; then status=""
+  elif [ $capacity -ge 20 ]; then status=""
+  elif [ $capacity -ge 10 ]; then status=""
+  elif [ $capacity -ge 0 ]; then status=""
+  else status=""
+  fi
+}
+
+case $BLOCK_BUTTON in
+  3) notify-send "$bat_status  $capacity %"
+esac
+
+case $bat_status in
+  "Full") status="" ;;
+  "Discharging") f_discharging ;;
+  "Charging") f_charging ;;
+  "Not Charging") status="" ;;
+  "Unknown") status="" ;;
+  *) exit 1 ;;
+esac
+
+echo $status
