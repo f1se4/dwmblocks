@@ -7,13 +7,12 @@ Modular status bar for dwm written in c.
 The statusbar is made from text output from commandline programs.  Blocks are
 added and removed by editing the config.h file.
 
-# Luke's build
+# build
 
-I have dwmblocks read my preexisting scripts
-[here in my dotfiles repo](https://github.com/LukeSmithxyz/voidrice/tree/master/.local/bin/statusbar).
+In **scripts** folder you have scripts used by dwmblocks
+
 So if you want my build out of the box, download those and put them in your
-`$PATH`. I do this to avoid redundancy in LARBS, both i3 and dwm use the same
-statusbar scripts.
+`$PATH`. 
 
 # Signaling changes
 
@@ -35,10 +34,9 @@ Note that all modules must have different signal numbers.
 
 # Clickable modules
 
-Like i3blocks, this build allows you to build in additional actions into your
-scripts in response to click events.  See the above linked scripts for examples
-of this using the `$BLOCK_BUTTON` variable.
-
-For this feature to work, you need the appropriate patch in dwm as well. See
-[here](https://dwm.suckless.org/patches/statuscmd/).
 Credit for those patches goes to Daniel Bylinka (daniel.bylinka@gmail.com).
+
+This build allows you to build in additional actions into your
+scripts in response to click events.  See scripts for examples of this using the 
+`$BLOCK_BUTTON` variable.
+

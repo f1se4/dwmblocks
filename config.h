@@ -10,7 +10,7 @@ static const Block blocks[] = {
 	/* {"",	"sb-price lbc \"LBRY Token\" 📚",			9000,	22}, */
 	/* {"",	"sb-price bat \"Basic Attention Token\" 🦁",	9000,	20}, */
 	/* {"",	"sb-price link \"Chainlink\" 🔗",			300,	25}, */
-	{"",	"sb-price xmr \"Monero\" 🔒",			9000,	24}, 
+/* 	{"",	"sb-price xmr \"Monero\" 🔒",			9000,	24},  */
 	/* {"",	"sb-price eth Ethereum 🍸",	9000,	23}, */
 	/* {"",	"sb-price btc Bitcoin 💰",				9000,	21}, */
 	/*{"",	"sb-torrent",	20,	7},*/
@@ -18,7 +18,7 @@ static const Block blocks[] = {
 	 {"",	"sb-cpu",		10,	18}, 
 	/*{"",	"sb-forecast",	18000,	5},*/
 	/*{"",	"sb-mailbox",	180,	12},*/
-	{"",	"sb-nettraf",	1,	16},
+/* 	{"",	"sb-nettraf",	1,	16}, */
 	{"",	"sb-volume",	1,	10},
 	{"",	"sb-internet",	5,	4},
 	{"",	"sb-battery2",	5,	3},
