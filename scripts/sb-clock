@@ -19,9 +19,9 @@ case "$clock" in
 esac
 
 case $BLOCK_BUTTON in
-	1) notify-send "This Month" "$(ncal -M)" ;;
+	1) notify-send "This Month" "$(ncal -M)" &&  notify-send "$(gcalcli agenda --nocolor --nostarted  | head -2 | tail -1)" ;;
 	2) setsid -f "$TERMINAL" -e task ;;
-	3) notify-send "📅 Time/date module" "\show the month via \`cal\`" ;;
+	3) notify-send "📅 Time/date module / show the month / and next event in gcalcli" ;;
 esac
 
 out_date="$(date +"%d/%m/%Y %H:%M")"
