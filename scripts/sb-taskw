@@ -1,0 +1,22 @@
+#!/bin/bash
+most_urgent_desc=$(task rc.verbose: rc.report.next.columns:description rc.report.next.labels:1 limit:1 next)
+most_urgent_id=$(task rc.verbose: rc.report.next.columns:id rc.report.next.labels:1 limit:1 next)
+most_urgent_due=$(task rc.verbose: rc.report.next.columns:due.relative rc.report.next.labels:1 limit:1 next)
+
+get_task_done()
+{
+  r=$(echo -e "Yes\nNo" | dmenu -i -p "Do you want to mark task done?" -fn "Hack Nerd Font-10" -nf '#D8DEE9' -sb '#A3BE8C' -sf '#4c566A')
+  case "$r" in
+    Yes) task "$((`cat /tmp/tw_dwmenublocks_id`))" done 
+         notify-send " Task has been done! Let's go for the next";;
+    No) ;;
+  esac
+}
+
+echo "$most_urgent_id" > /tmp/tw_dwmenublocks_id
+echo " -" $most_urgent_desc
+
+case $BLOCK_BUTTON in
+	1) get_task_done ;;
+	3) notify-send "  To Do Tasks from taskwarrior" "\- Left click to mark current task DONE"
+esac
